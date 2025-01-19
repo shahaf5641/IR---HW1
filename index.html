@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אתר סטודנטים ושאלות ותשובות</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: linear-gradient(135deg, #ffffff, #f4f4f9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        .qa {
+            margin-bottom: 25px;
+        }
+        .question {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #34495e;
+            margin: 0;
+            padding: 15px 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .question:hover {
+            background: #dce1e3;
+            transform: translateY(-2px);
+        }
+        .answer {
+            display: none;
+            margin-top: 15px;
+            font-size: 1em;
+            color: #555;
+            line-height: 1.7;
+            padding: 15px 20px;
+            background: #ffffff;
+            border-left: 6px solid #3498db;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        ul li {
+            margin: 8px 0;
+            padding: 8px;
+            background: #f4f8fb;
+            border: 1px solid #d6e6f2;
+            border-radius: 5px;
+        }
+                header {
+            background: linear-gradient(90deg, #1e90ff, #333);
+            color: white;
+            padding: 20px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+            margin: 0;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #1e90ff;
+            text-shadow: 0 0 5px rgba(30, 144, 255, 0.8);
+        }
+
+        
+        main {
+            padding: 20px;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            if (answer.style.display === "none" || !answer.style.display) {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">דף הבית</a></li>
+                <li><a href="student1.html">שרה סאלח</a></li>
+                <li><a href="student2.html">שחף ישראל</a></li>
+                <li><a href="student3.html">יובל סבאטו</a></li>
+                <li><a href="student4.html">שי אוסמו</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <h1>ברוכים הבאים לאתר EasyGo</h1>
+                <p>אתר זה מיועד להציג את הפרטים האישיים, התחביבים והישגי הקורסים של הסטודנטים בצוות שלנו.</p>
+            </div>
+        </section>
+
+        <section id="qa-section" class="container">
+            <h2>שאלות ותשובות - פרויקט</h2>
+            <div class="qa">
+                <div class="question" onclick="toggleAnswer(this)">שאלה - מה הטכנולוגיות המעניינות שהשתמשתם בהם בפרויקט?</div>
+                <div class="answer">
+                    בפרויקט זה נעשה שימוש במגוון טכנולוגיות מעניינות:
+                    <ul>
+                        <li><strong>Selenium:</strong> ספרייה לאוטומציה של דפדפנים.</li>
+                        <li><strong>BeautifulSoup:</strong> ספרייה לניתוח HTML.</li>
+                        <li><strong>Pandas:</strong> ספרייה לעיבוד נתונים.</li>
+                        <li><strong>NLTK:</strong> ספרייה לעיבוד שפה טבעית.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="qa">
+                <div class="question" onclick="toggleAnswer(this)">שאלה - כמה זמן רצו השאילתות שלכם? במה זה תלוי? האם לדעתכם ניתן לשפר זמן זה?</div>
+                <div class="answer">
+                    זמן הריצה הממוצע של השאילתות הוא כ-20 שניות. זמן הריצה של הקוד תלוי בעיקר בביצועי הרשת, מהירות טעינת הדפים, יעילות העיבוד של Selenium ו-BS4, ומשאבי המחשב. ניתן לשפר את זמן הריצה על ידי:
+                    <ul>
+                        <li>שימוש בדפדפן במצב Headless.</li>
+                        <li>הפחתת זמני המתנה עם WebDriverWait במקום time.sleep.</li>
+                        <li>עיבוד טקסט מקבילי באמצעות ספריות כמו concurrent.futures.</li>
+                        <li>שימוש בכלים מהירים יותר כמו SpaCy לעיבוד שפה טבעית.</li>
+                        <li>מעבר לשימוש ב-API רשמי של CDC (אם קיים).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="qa">
+                <div class="question" onclick="toggleAnswer(this)">שאלה - האם בדפים שהוחזרו קיימים hubs? Authorities? נמקו.</div>
+                <div class="answer">
+                    בדפים שהוחזרו קיימים גם Hubs וגם Authorities:
+                    <ul>
+                        <li><strong>Authorities:</strong> דפים המספקים מידע מעמיק ואמין. לדוגמה, הדף "Gout | Arthritis | CDC" נחשב ל-Authority, מכיוון שהוא מספק מידע מקיף על מחלת הגאוט.</li>
+                        <li><strong>Hubs:</strong> דפים המשמשים כמרכזי קישורים. לדוגמה, הדף "About Chikungunya | Chikungunya Virus | CDC" נחשב ל-Hub, מאחר שהוא מפנה למקורות מידע נוספים.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="qa">
+                <div class="question" onclick="toggleAnswer(this)">שאלה - בחרו 10 דפים שהזחלן החזיר, ואשר יש ביניהם קישורים. חשבו PageRank לכל דף, מומלץ להעזר בסקריפט מוכן. הציגו את החישובים ואת הדירוג הסופי.</div>
+                <div class="answer">
+                    בתהליך חישוב ה-PageRank, פונקציה זו מחשבת מחדש את ערכי הדירוג לכל עמוד על בסיס הקישורים המובילים אליו. עבור כל עמוד, היא סורקת אילו עמודים אחרים מקשרים אליו, מחשבת את התרומה שלהם לדירוג על ידי חלוקת הדירוג הנוכחי שלהם במספר הקישורים היוצאים שלהם, ומוסיפה את התרומה הזו לדירוג הכולל של העמוד. תהליך זה חוזר על עצמו מספר איטרציות עד שהדירוגים מתייצבים. התוצאות הראו את הדירוגים הבאים:
+                    <ul>
+                        <li>https://www.cdc.gov/niosh/aviation/prevention/   |     0.750</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/additional-considerations/substance-use   |     0.400</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/pretravel-consultation   |     0.267</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/deep-vein-thrombosis-and-pulmonary-embolism   |     0.167</li>
+                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-jetlag.html   |     0.100</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/jet-lag   |     0.067</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/family/infants-and-children   |     0.067</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/complementary-and-integrative   |     0.067</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/mental-health   |     0.067</li>
+                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-reproductive-health.html   |     0.050</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="qa">
+                <div class="question" onclick="toggleAnswer(this)">שאלה - הראו לשני משתמשים שונים את הדירוג מהסעיף הקודם, בקשו מהם לסמן relevance ובצעו feedback relevance .האם ניתן להציע שאילתא מותאמת על מנת לשפר תוצאות?</div>
+                <div class="answer">
+                    <p><strong>Bob:</strong></p>
+                    <ul>
+                        <li>https://www.cdc.gov/niosh/aviation/prevention/ - R</li>
+                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-jetlag.html - NR</li>
+                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-reproductive-health.html - NR</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/additional-considerations/substance-use - R</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/deep-vein-thrombosis-and-pulmonary-embolism - R</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/jet-lag - R</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/family/infants-and-children - NR</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/complementary-and-integrative - R</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/mental-health - R</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/pretravel-consultation - NR</li>
+                    </ul>
+                    <p><strong>Alice:</strong></p>
+                    <ul>
+                        <li>https://www.cdc.gov/niosh/aviation/prevention/ - NR</li>
+                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-jetlag.html - R</li>
+                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-reproductive-health.html - NR</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/additional-considerations/substance-use - NR</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/deep-vein-thrombosis-and-pulmonary-embolism - NR</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/jet-lag - R</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/family/infants-and-children - R</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/complementary-and-integrative - R</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/mental-health - NR</li>
+                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/pretravel-consultation - NR</li>
+                    </ul>
+                    <p><strong>הצעה לשיפור שאילתה:</strong></p>
+                    <ul>
+                        <li>פילטר על פי תוכן דף ומילות מפתח: דפים שמזכירים במפורש את הביטוי "jet lag treatment" או "remedies" יקבלו משקל גבוה יותר.</li>
+                        <li>שימוש במשוב המשתמשים: שילוב משוב המשתמשים בקביעת דירוג: דפים שסומנו כ"רלוונטיים" על ידי שניהם יקבלו עדיפות גבוהה יותר בתוצאות.</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>כל הזכויות שמורות © 2025 - אתר הסטודנטים</p>
+    </footer>
+</body>
+</html>

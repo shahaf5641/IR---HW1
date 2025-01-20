@@ -60,7 +60,7 @@ def fetch_search_results(query, driver, max_results=20):
                 if not url.startswith("http"):
                     url = f"https://www.cdc.gov{url}"
                 urls_and_titles.append((link_tag.text.strip(), url))
-                print(f"Added ({len(urls_and_titles)}/{max_results})")
+                print(f"Added ({len(urls_and_titles)}/{max_results}) URL: {url}")
                 if len(urls_and_titles) >= max_results:
                     break
 
@@ -105,9 +105,6 @@ def process_queries():
         store_query_results(query, titles, urls)
 
     driver.quit()
-
-# Add timer
-start_time = time.time()
 
 # Run the process
 process_queries()
@@ -192,6 +189,76 @@ with pd.ExcelWriter(output_file, mode="w") as writer:
     pd.DataFrame({"Word": [word for word, _ in most_common_words],
                   "Indexes": [str(inverted_index[word]) for word, _ in most_common_words]}).to_excel(writer, index=False, sheet_name="Inverted Index")
 
-end_time = time.time()
-print(f"Data, ranked results, and inverted index successfully saved to '{output_file}'")
-print(f"Total runtime: {end_time - start_time:.2f} seconds")
+# Function to collect feedback from users
+def collect_feedback(results):
+    user_feedback = {"User1": [], "User2": []}
+
+    for idx, result in enumerate(results):
+        print(f"\nResult {idx + 1}:")
+        print(f"Title: {result['Title']}")
+        print(f"URL: {result['URL']}")
+
+        # Collect feedback from User 1
+        feedback_user1 = input("User 1 - Is this result relevant? (Yes/No): ").strip().lower()
+        user_feedback["User1"].append(feedback_user1 == "yes")
+
+        # Collect feedback from User 2
+        feedback_user2 = input("User 2 - Is this result relevant? (Yes/No): ").strip().lower()
+        user_feedback["User2"].append(feedback_user2 == "yes")
+
+    return user_feedback
+
+# Function to calculate precision and recall
+def calculate_precision_recall(feedback, total_relevant_in_dataset=15):
+    precision = sum(feedback) / len(feedback)  # Relevant results / Total retrieved
+    recall = sum(feedback) / total_relevant_in_dataset  # Relevant results / Total relevant in dataset
+    return precision, recall
+
+# Main function to process queries with user feedback
+def process_queries_with_feedback():
+    driver = webdriver.Chrome()
+
+    # Process the first query only
+    print(f"Processing Query: '{queries[0]}'")
+    titles, urls = process_query_results(queries[0], driver, max_results=10)
+
+    # Store the top 10 results
+    store_query_results(queries[0], titles, urls)
+
+    # Collect user feedback
+    feedback = collect_feedback(data["Results"][0][:10])
+
+    # Calculate precision and recall for each user
+    precision_recall_data = []
+    for user, user_feedback in feedback.items():
+        precision, recall = calculate_precision_recall(user_feedback, total_relevant_in_dataset=15)
+        print(f"\n{user} - Precision: {precision:.2f}, Recall: {recall:.2f}")
+        precision_recall_data.append({"User": user, "Precision": precision, "Recall": recall})
+
+    driver.quit()
+
+    # Save results, user feedback, and precision/recall to Excel
+    with pd.ExcelWriter(output_file, mode="w") as writer:
+        # Save results
+        df.to_excel(writer, index=False, sheet_name="Results")
+
+        # Save ranked results
+        ranked_df = pd.DataFrame(ranked_docs_with_scores, columns=["Title", "URL", "TF-IDF Score"])
+        ranked_df.to_excel(writer, index=False, sheet_name="Ranked Results")
+
+        # Save inverted index
+        pd.DataFrame({"Word": [word for word, _ in most_common_words],
+                      "Indexes": [str(inverted_index[word]) for word, _ in most_common_words]}).to_excel(writer, index=False, sheet_name="Inverted Index")
+
+        # Save feedback and metrics
+        feedback_df = pd.DataFrame.from_dict(feedback)
+        feedback_df.to_excel(writer, index=False, sheet_name="User Feedback")
+
+        # Save precision and recall
+        precision_recall_df = pd.DataFrame(precision_recall_data)
+        precision_recall_df.to_excel(writer, index=False, sheet_name="Precision Recall")
+
+    print(f"User feedback, precision, and recall saved to '{output_file}'")
+
+# Run the process with feedback
+process_queries_with_feedback()

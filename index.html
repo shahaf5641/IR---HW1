@@ -1,140 +1,13 @@
 <!DOCTYPE html>
 <html lang="he">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>אתר סטודנטים ושאלות ותשובות</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            direction: rtl;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: linear-gradient(135deg, #ffffff, #f4f4f9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-size: 2.2em;
-        }
-        .qa {
-            margin-bottom: 25px;
-        }
-        .question {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #34495e;
-            margin: 0;
-            padding: 15px 20px;
-            background: #ecf0f1;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .question:hover {
-            background: #dce1e3;
-            transform: translateY(-2px);
-        }
-        .answer {
-            display: none;
-            margin-top: 15px;
-            font-size: 1em;
-            color: #555;
-            line-height: 1.7;
-            padding: 15px 20px;
-            background: #ffffff;
-            border-left: 6px solid #3498db;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0;
-        }
-        ul li {
-            margin: 8px 0;
-            padding: 8px;
-            background: #f4f8fb;
-            border: 1px solid #d6e6f2;
-            border-radius: 5px;
-        }
-                header {
-            background: linear-gradient(90deg, #1e90ff, #333);
-            color: white;
-            padding: 20px 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #fff;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-around;
-            padding: 0;
-            margin: 0;
-        }
-
-        header nav ul li {
-            margin: 0 15px;
-        }
-
-        header nav ul li a {
-            color: black;
-            text-decoration: none;
-            font-size: 1.1em;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #1e90ff;
-            text-shadow: 0 0 5px rgba(30, 144, 255, 0.8);
-        }
-
-        
-        main {
-            padding: 20px;
-        }
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-    </style>
-
-    <script>
-        function toggleAnswer(element) {
-            const answer = element.nextElementSibling;
-            if (answer.style.display === "none" || !answer.style.display) {
-                answer.style.display = "block";
-            } else {
-                answer.style.display = "none";
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="homestyle.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -148,116 +21,404 @@
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <section id="home">
             <div class="container">
                 <h1>ברוכים הבאים לאתר EasyGo</h1>
                 <p>אתר זה מיועד להציג את הפרטים האישיים, התחביבים והישגי הקורסים של הסטודנטים בצוות שלנו.</p>
             </div>
         </section>
+        <h2>שאלות ותשובות - פרויקט</h2>
 
-        <section id="qa-section" class="container">
-            <h2>שאלות ותשובות - פרויקט</h2>
-            <div class="qa">
-                <div class="question" onclick="toggleAnswer(this)">שאלה - מה הטכנולוגיות המעניינות שהשתמשתם בהם בפרויקט?</div>
-                <div class="answer">
-                    בפרויקט זה נעשה שימוש במגוון טכנולוגיות מעניינות:
-                    <ul>
-                        <li><strong>Selenium:</strong> ספרייה לאוטומציה של דפדפנים.</li>
-                        <li><strong>BeautifulSoup:</strong> ספרייה לניתוח HTML.</li>
-                        <li><strong>Pandas:</strong> ספרייה לעיבוד נתונים.</li>
-                        <li><strong>NLTK:</strong> ספרייה לעיבוד שפה טבעית.</li>
-                    </ul>
-                </div>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">מהו תחום העיסוק המרכזי של האתר? מהו המידע הזמין למשתמשי
+                האתר?</div>
+            <div class="answer">
+                <img src="cdc.png" alt="CDC Logo">
+                <p>האתר של ה-CDC (Centers for Disease Control and Prevention) מתמקד במתן מידע ומחקר על בריאות הציבור
+                    ומניעת מחלות בארצות הברית ובעולם. תחום העיסוק המרכזי שלו הוא הנגשת מידע עדכני ואמין על מחלות, מגפות,
+                    חיסונים, בריאות סביבתית, מניעת פציעות ועוד. האתר מציע למשתמשים נתונים סטטיסטיים, הנחיות בריאותיות,
+                    פרסומים מדעיים, כלי חינוך ומידע על תוכניות למניעת מחלות ושיפור הבריאות. הוא פונה לקהל רחב, כולל אנשי
+                    מקצוע בתחום הבריאות, חוקרים, מחנכים והציבור הכללי, ומספק גם עדכונים חירומיים על מגפות או אירועי
+                    בריאות ציבוריים.</p>
+                <p>קישור לאתר: <a href="https://search.cdc.gov/search/?query="
+                        target="_blank">https://search.cdc.gov/search/?query=</a></p>
             </div>
+        </div>
 
-            <div class="qa">
-                <div class="question" onclick="toggleAnswer(this)">שאלה - כמה זמן רצו השאילתות שלכם? במה זה תלוי? האם לדעתכם ניתן לשפר זמן זה?</div>
-                <div class="answer">
-                    זמן הריצה הממוצע של השאילתות הוא כ-20 שניות. זמן הריצה של הקוד תלוי בעיקר בביצועי הרשת, מהירות טעינת הדפים, יעילות העיבוד של Selenium ו-BS4, ומשאבי המחשב. ניתן לשפר את זמן הריצה על ידי:
-                    <ul>
-                        <li>שימוש בדפדפן במצב Headless.</li>
-                        <li>הפחתת זמני המתנה עם WebDriverWait במקום time.sleep.</li>
-                        <li>עיבוד טקסט מקבילי באמצעות ספריות כמו concurrent.futures.</li>
-                        <li>שימוש בכלים מהירים יותר כמו SpaCy לעיבוד שפה טבעית.</li>
-                        <li>מעבר לשימוש ב-API רשמי של CDC (אם קיים).</li>
-                    </ul>
-                </div>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">רשמו שלוש שאילתות מעניינות שהייתם רוצים לקבל עליהן תשובה
+                באתר, והאתר אינו עונה עליהן כעת. עבור כל שאילתא כזו, ציינו מהם פרטי המידע הנדרשים לצורך מענה על השאילתא.
             </div>
+            <div class="answer">
+                <ul>
+                    <li><strong>How is jet lag treated?</strong>
+                        <ul>
+                            <li>טיפולים מוכחים לשיפור התאקלמות לאחר טיסות (כגון שינוי תזונה, תוספי תזונה, או תרופות).
+                            </li>
+                            <li>הנחיות מותאמות לגילאים שונים (ילדים, מבוגרים, קשישים).</li>
+                            <li>המלצות להתמודדות עם ג'ט לג בנסיעות חוזרות או בקרב עובדים בתפקידים בינלאומיים.</li>
+                            <img src="jet lag.png" alt="Symptoms of Jet Lag">
 
-            <div class="qa">
-                <div class="question" onclick="toggleAnswer(this)">שאלה - האם בדפים שהוחזרו קיימים hubs? Authorities? נמקו.</div>
-                <div class="answer">
-                    בדפים שהוחזרו קיימים גם Hubs וגם Authorities:
-                    <ul>
-                        <li><strong>Authorities:</strong> דפים המספקים מידע מעמיק ואמין. לדוגמה, הדף "Gout | Arthritis | CDC" נחשב ל-Authority, מכיוון שהוא מספק מידע מקיף על מחלת הגאוט.</li>
-                        <li><strong>Hubs:</strong> דפים המשמשים כמרכזי קישורים. לדוגמה, הדף "About Chikungunya | Chikungunya Virus | CDC" נחשב ל-Hub, מאחר שהוא מפנה למקורות מידע נוספים.</li>
-                    </ul>
-                </div>
-            </div>
+                        </ul>
+                    </li>
+                    <li><strong>What are the symptoms of jaundice?</strong>
+                        <ul>
+                            <li>רשימת הסימפטומים המרכזיים (כגון גוון עור צהוב, שתן כהה).</li>
+                            <li>מידע על הבדלים בסימפטומים בין קבוצות אוכלוסייה (תינוקות, מבוגרים, נשים בהריון).</li>
+                            <li>גורמי סיכון להחמרת התסמינים ומתי לפנות לטיפול רפואי.</li>
+                            <img src="jaundice_person.jpeg" alt="Person with Jaundice">
 
-            <div class="qa">
-                <div class="question" onclick="toggleAnswer(this)">שאלה - בחרו 10 דפים שהזחלן החזיר, ואשר יש ביניהם קישורים. חשבו PageRank לכל דף, מומלץ להעזר בסקריפט מוכן. הציגו את החישובים ואת הדירוג הסופי.</div>
-                <div class="answer">
-                    בתהליך חישוב ה-PageRank, פונקציה זו מחשבת מחדש את ערכי הדירוג לכל עמוד על בסיס הקישורים המובילים אליו. עבור כל עמוד, היא סורקת אילו עמודים אחרים מקשרים אליו, מחשבת את התרומה שלהם לדירוג על ידי חלוקת הדירוג הנוכחי שלהם במספר הקישורים היוצאים שלהם, ומוסיפה את התרומה הזו לדירוג הכולל של העמוד. תהליך זה חוזר על עצמו מספר איטרציות עד שהדירוגים מתייצבים. התוצאות הראו את הדירוגים הבאים:
-                    <ul>
-                        <li>https://www.cdc.gov/niosh/aviation/prevention/   |     0.750</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/additional-considerations/substance-use   |     0.400</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/pretravel-consultation   |     0.267</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/deep-vein-thrombosis-and-pulmonary-embolism   |     0.167</li>
-                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-jetlag.html   |     0.100</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/jet-lag   |     0.067</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/family/infants-and-children   |     0.067</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/complementary-and-integrative   |     0.067</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/mental-health   |     0.067</li>
-                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-reproductive-health.html   |     0.050</li>
-                    </ul>
-                </div>
-            </div>
+                        </ul>
+                    </li>
+                    <li><strong>What causes joint pain?</strong>
+                        <ul>
+                            <li>פירוט הגורמים המרכזיים לכאבי מפרקים (דלקות, מחלות אוטואימוניות, פציעות).</li>
+                            <li>קשר בין גיל, פעילות גופנית ומחלות כרוניות לכאבים במפרקים.</li>
+                            <li>דרכי אבחון וטיפול על בסיס סוג הכאב ומיקומו בגוף.</li>
+                            <img src="joint_pain.jpeg" alt="Person with Joint Pain">
 
-            
-            <div class="qa">
-                <div class="question" onclick="toggleAnswer(this)">שאלה - הראו לשני משתמשים שונים את הדירוג מהסעיף הקודם, בקשו מהם לסמן relevance ובצעו feedback relevance .האם ניתן להציע שאילתא מותאמת על מנת לשפר תוצאות?</div>
-                <div class="answer">
-                    <p><strong>Bob:</strong></p>
-                    <ul>
-                        <li>https://www.cdc.gov/niosh/aviation/prevention/ - R</li>
-                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-jetlag.html - NR</li>
-                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-reproductive-health.html - NR</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/additional-considerations/substance-use - R</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/deep-vein-thrombosis-and-pulmonary-embolism - R</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/jet-lag - R</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/family/infants-and-children - NR</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/complementary-and-integrative - R</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/mental-health - R</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/pretravel-consultation - NR</li>
-                    </ul>
-                    <p><strong>Alice:</strong></p>
-                    <ul>
-                        <li>https://www.cdc.gov/niosh/aviation/prevention/ - NR</li>
-                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-jetlag.html - R</li>
-                        <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-reproductive-health.html - NR</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/additional-considerations/substance-use - NR</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/deep-vein-thrombosis-and-pulmonary-embolism - NR</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/jet-lag - R</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/family/infants-and-children - R</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/complementary-and-integrative - R</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/mental-health - NR</li>
-                        <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/pretravel-consultation - NR</li>
-                    </ul>
-                    <p><strong>הצעה לשיפור שאילתה:</strong></p>
-                    <ul>
-                        <li>פילטר על פי תוכן דף ומילות מפתח: דפים שמזכירים במפורש את הביטוי "jet lag treatment" או "remedies" יקבלו משקל גבוה יותר.</li>
-                        <li>שימוש במשוב המשתמשים: שילוב משוב המשתמשים בקביעת דירוג: דפים שסומנו כ"רלוונטיים" על ידי שניהם יקבלו עדיפות גבוהה יותר בתוצאות.</li>
-                    </ul>
-                </div>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            
-        </section>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">בנו זחלן המחזיר את התוצאות לשאילתות שהגדרתם. מומלץ (אך לא
+                חובה) לבנות את הזחלן בפייתון. הציגו את קוד הזחלן.</div>
+            <div class="answer">
+                <p>קישור לקוד בגיט: <a
+                        href="https://github.com/shahaf5641/IR---Project/blob/8ef85fee334eb219ee0af48dd59dd1e9b296bfcc/HW2/crawler%20tar3.py"
+                        target="_blank">GitHub Repository</a></p>
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">רשמו טכנולוגיות שונות מעניינות שהשתמשתם בהם בפרויקט.
+            </div>
+            <div class="answer">
+                <p>בפרויקט זה נעשה שימוש במגוון טכנולוגיות מעניינות שמדגימות את השימוש בכמה כלי עבודה מתקדמים באוטומציה,
+                    עיבוד נתונים, ותהליכי ניתוח טקסט:</p>
+                <ul>
+                    <li><strong>Selenium:</strong>
+                        <p>ספרייה פופולרית לאוטומציה של דפדפנים לצורך גישה לאתרי אינטרנט וביצוע פעולות כמו מילוי טפסים,
+                            ניווט, ולחיצה על כפתורים. בפרויקט נעשה שימוש ב-Selenium כדי לבצע חיפוש באתר ה-CDC ולנווט בין
+                            דפי תוצאות.</p>
+                    </li>
+                    <li><strong>BeautifulSoup:</strong>
+                        <p>ספרייה לניתוח מבנה HTML ולהפקת נתונים מאתרי אינטרנט. בפרויקט נעשה שימוש כדי לאסוף תוצאות
+                            חיפוש (כותרות וקישורים) ולנתח אותן.</p>
+                    </li>
+                    <li><strong>Pandas:</strong>
+                        <p>ספרייה לעיבוד וניתוח נתונים בצורה יעילה באמצעות טבלאות. שימשה ליצירת קובץ Excel עם התוצאות,
+                            הדירוג, ומאגר האינדקס ההפוך (Inverted Index).</p>
+                    </li>
+                    <li><strong>NLTK:</strong>
+                        <p>ספרייה לעיבוד שפה טבעית. שימשה להסרת מילים נפוצות (Stop Words), חיתוך מילים (Stemming),
+                            ולניתוח טקסטים על מנת לחלץ משמעות ממילות השאילתה.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">כמה זמן רצו השאילתות שלכם? במה זה תלוי? האם לדעתכם ניתן
+                לשפר זמן זה?</div>
+            <div class="answer">
+                <p>זמן הריצה הממוצע של השאילתות הוא כ-20 שניות.</p>
+                <p><strong>במה זה תלוי:</strong></p>
+                <ul>
+                    <li>ביצועי הרשת ומהירות טעינת הדפים.</li>
+                    <li>יעילות העיבוד של Selenium ו-BeautifulSoup.</li>
+                    <li>משאבי המחשב הזמינים בזמן הריצה.</li>
+                </ul>
+                <p><strong>הצעות לשיפור זמן הריצה:</strong></p>
+                <ul>
+                    <li>שימוש בדפדפן במצב Headless.</li>
+                    <li>הפחתת זמני המתנה באמצעות WebDriverWait במקום time.sleep.</li>
+                    <li>עיבוד טקסט מקבילי בעזרת ספריות כמו concurrent.futures.</li>
+                    <li>שימוש בכלים מהירים יותר כמו SpaCy לעיבוד שפה טבעית.</li>
+                    <li>מעבר לשימוש ב-API רשמי של CDC (אם קיים) במקום Web Scraping עם Selenium.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">בנו inverted index ל- 15 המילים הנפוצות שחזרו (מספיק
+                להתיחס ל -20 הדפים הראשונים שחזרו)</div>
+            <div class="answer">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Word</th>
+                            <th>Indexes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>hepat</td>
+                            <td>[20, 20, 24, 24, 25, 25, 26, 26, 27, 27, 30, 30, 33, 33, 34, 34, 37, 56, 56]</td>
+                        </tr>
+                        <tr>
+                            <td>symptom</td>
+                            <td>[20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 39, 46, 53, 54]</td>
+                        </tr>
+                        <tr>
+                            <td>health</td>
+                            <td>[2, 3, 8, 8, 10, 15, 15, 22, 44, 49, 50, 50]</td>
+                        </tr>
+                        <tr>
+                            <td>yellow</td>
+                            <td>[0, 2, 3, 5, 6, 7, 9, 16, 18, 21, 21]</td>
+                        </tr>
+                        <tr>
+                            <td>cdc</td>
+                            <td>[0, 2, 3, 5, 6, 7, 9, 16, 18]</td>
+                        </tr>
+                        <tr>
+                            <td>book</td>
+                            <td>[0, 2, 3, 5, 6, 7, 9, 16, 18]</td>
+                        </tr>
+                        <tr>
+                            <td>sign</td>
+                            <td>[20, 22, 24, 26, 27, 29, 30, 32, 39]</td>
+                        </tr>
+                        <tr>
+                            <td>clinic</td>
+                            <td>[20, 27, 30, 32, 33, 34, 35]</td>
+                        </tr>
+                        <tr>
+                            <td>travel</td>
+                            <td>[2, 6, 22, 50, 50]</td>
+                        </tr>
+                        <tr>
+                            <td>reproduct</td>
+                            <td>[8, 8, 10, 15, 15]</td>
+                        </tr>
+                        <tr>
+                            <td>viru</td>
+                            <td>[21, 28, 53, 54, 57]</td>
+                        </tr>
+                        <tr>
+                            <td>viral</td>
+                            <td>[33, 33, 37, 56, 56]</td>
+                        </tr>
+                        <tr>
+                            <td>arthriti</td>
+                            <td>[40, 42, 45, 49, 52]</td>
+                        </tr>
+                        <tr>
+                            <td>vaccin</td>
+                            <td>[19, 47, 51, 51]</td>
+                        </tr>
+                        <tr>
+                            <td>fever</td>
+                            <td>[21, 21, 41, 41]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">בחרו את אחת השאילתות, וחשבו tfIdf של המושגים בשאילתא.
+            </div>
+            <div class="answer">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>TF-IDF Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Aircrew and Jet Lag</td>
+                            <td>1.399901693</td>
+                        </tr>
+                        <tr>
+                            <td>Jet Lag | CDC Yellow Book 2024</td>
+                            <td>0.839941016</td>
+                        </tr>
+                        <tr>
+                            <td>Flu Vaccination by Jet Injector | Influenza (Flu)</td>
+                            <td>0.316186664</td>
+                        </tr>
+                        <tr>
+                            <td>Complementary & Integrative Health Approaches to Travel Wellness | CDC Yellow Book 2024
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mental Health | CDC Yellow Book 2024</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Aircrew and Workplace Exposures</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Deep Vein Thrombosis & Pulmonary Embolism | CDC Yellow Book 2024</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Traveling Safely with Infants & Children | CDC Yellow Book 2024</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Road & Traffic Safety | CDC Yellow Book 2024</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>About Work Schedules and Reproductive Health | Reproductive Health and The Workplace
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>The Pretravel Consultation | CDC Yellow Book 2024</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Aircrew and Reproductive Health</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Module 9. Coping with the Night and Evening Shifts, Sleep (Continued)</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Module 3. Injuries/Errors (Continued) Groups at Risk for Crashes</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Module 9. Coping with the Night and Evening Shifts, References</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Other Sources of Information about Work Schedules and Sleep</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Examples of Jobs and Reproductive Health | Reproductive Health</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Table of Contents | CDC Yellow Book 2024</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Site Index</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Substance Use & Substance Use Disorders | CDC Yellow Book 2024</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">האם בדפים שהוחזרו קיימים hubs? Authorities? נמקו.</div>
+            <div class="answer">
+                <p>בדפים שהוחזרו קיימים גם Hubs וגם Authorities.</p>
+                <p><strong>Authorities:</strong> דפים אלה מספקים מידע מעמיק ואמין בנושאים ספציפיים ומקבלים הפניות
+                    ממקורות רבים. לדוגמה, הדף <em>"Gout | Arthritis | CDC"</em> נחשב ל-Authority, מכיוון שהוא מספק מידע
+                    מקיף על מחלת "הגאוט", כולל תסמינים, גורמי סיכון ואפשרויות טיפול. דף זה מהווה מקור סמכותי בתחום
+                    הבריאות והרפואה.</p>
+                <p><strong>Hubs:</strong> דפים אלה מתפקדים כמרכזי קישורים ומפנים למקורות מידע נוספים בנושאים רלוונטיים.
+                    לדוגמה, הדף <em>"About Chikungunya | Chikungunya Virus | CDC"</em> נחשב ל-Hub, מאחר שהוא מרכז
+                    קישורים לדפים נוספים בנושאים כמו מניעה, נתונים אפידמיולוגיים ומידע למחנכים בתחום הבריאות.</p>
+                <p><strong>הסבר:</strong> דפי Authority ממוקדים בהצגת תוכן אמין שמבוסס על מומחיות, בעוד ש-Hubs משמשים
+                    כאינדקסים שמרכזים קישורים לדפים רלוונטיים אחרים. בדפים שהוחזרו מה-CDC ניתן לזהות את שני הסוגים הללו,
+                    כאשר ה-CDC עצמו הוא אתר סמכותי הכולל הן תוכן מומחה (Authorities) והן מרכזי קישורים (Hubs).</p>
+            </div>
+        </div>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">בחרו 10 דפים שהזחלן החזיר, ואשר יש ביניהם קישורים. חשבו
+                PageRank לכל דף, מומלץ להעזר בסקריפט מוכן. הציגו את החישובים ואת הדירוג הסופי.</div>
+            <div class="answer">
+                <p><strong>PageRank values after iteration 2:</strong></p>
+                <img src="pageRank.png" alt="PageRank values after iteration 2">
+                <p><strong>Highest PageRank after second iteration:</strong></p>
+                <p><strong>Page:</strong> https://www.cdc.gov/niosh/aviation/prevention/</p>
+                <p><strong>PageRank Value:</strong> 0.750</p>
+                <p>קישור לקוד בגיט: <a
+                        href="https://github.com/shahaf5641/IR---Project/blob/8ef85fee334eb219ee0af48dd59dd1e9b296bfcc/HW3/pageRank.py"
+                        target="_blank">GitHub Repository</a></p>
+            </div>
+        </div>
+
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">הראו לשני משתמשים שונים את הדירוג מהסעיף הקודם, בקשו מהם
+                לסמן relevance feedback.</div>
+            <div class="answer">
+                <p><strong>Bob:</strong></p>
+                <ul>
+                    <li>https://www.cdc.gov/niosh/aviation/prevention/ - R</li>
+                    <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-jetlag.html - NR</li>
+                    <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-reproductive-health.html - NR</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/additional-considerations/substance-use - R</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/deep-vein-thrombosis-and-pulmonary-embolism
+                        - R</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/jet-lag - R</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/family/infants-and-children - NR</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/complementary-and-integrative - R</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/mental-health - R</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/pretravel-consultation - NR</li>
+                </ul>
+
+                <p><strong>Alice:</strong></p>
+                <ul>
+                    <li>https://www.cdc.gov/niosh/aviation/prevention/ - NR</li>
+                    <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-jetlag.html - R</li>
+                    <li>https://www.cdc.gov/niosh/aviation/prevention/aircrew-reproductive-health.html - NR</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/additional-considerations/substance-use - NR</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/deep-vein-thrombosis-and-pulmonary-embolism
+                        - NR</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/jet-lag - R</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/family/infants-and-children - R</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/complementary-and-integrative - R</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/mental-health - NR</li>
+                    <li>https://wwwnc.cdc.gov/travel/yellowbook/2024/preparing/pretravel-consultation - NR</li>
+                </ul>
+
+                <p><strong>האם ניתן להציע שאילתא מותאמת על מנת לשפר תוצאות?</strong></p>
+                <ul>
+                    <li><strong>פילטר על פי תוכן דף ומילות מפתח:</strong> דפים שמזכירים במפורש את הביטוי "jet lag
+                        treatment" או "remedies" יקבלו משקל גבוה יותר.</li>
+                    <li><strong>שימוש במשוב המשתמשים:</strong> שילוב משוב המשתמשים בקביעת דירוג: דפים שסומנו
+                        כ"רלוונטיים" על ידי שניהם יקבלו עדיפות גבוהה יותר בתוצאות.</li>
+                </ul>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bob</td>
+                            <td>0.5</td>
+                            <td>0.333333</td>
+                        </tr>
+                        <tr>
+                            <td>Alice</td>
+                            <td>0.4</td>
+                            <td>0.266667</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Back to Top Button -->
+            <button onclick="topFunction()" id="backToTopBtn" title="Back to Top">↑ Back To Top</button>
+        </div>
     </main>
-
-    <footer>
-        <p>כל הזכויות שמורות © 2025 - Easy Go</p>
-    </footer>
+    <!-- Connect home.js -->
+    <script src="home.js"></script>
 </body>
+
 </html>

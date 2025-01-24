@@ -1,0 +1,180 @@
+/* General body and layout */
+body {
+    font-family: 'Arial', sans-serif;
+    direction: rtl;
+    background: linear-gradient(135deg, #1e90ff, #00bcd4); /* Gorgeous blue gradient */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-size: cover;
+    height: 100vh;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Global container for styling */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px); /* Adding a blur effect for a modern look */
+}
+
+/* Header with Sticky Nav Bar */
+header {
+    background: rgba(30, 144, 255, 0.8);
+    color: white;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* Navigation Menu */
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+header nav ul li a:hover {
+    color: #1e90ff;
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.8);
+    border-bottom: 2px solid #1e90ff;
+}
+
+/* Hover Effects for Questions */
+.question {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #34495e;
+    margin: 0;
+    padding: 20px;
+    background: #ecf0f1;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.question:hover {
+    background: #3498db;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Answer Styling */
+.answer {
+    display: none;
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+    padding: 20px;
+    background: #ffffff;
+    border-left: 6px solid #3498db;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.answer img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.answer img:hover {
+    transform: scale(1.1);
+}
+
+/* Parallax scrolling effect for background images */
+.section {
+    padding: 100px 0;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+/* Table and content */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #1e90ff;
+}
+
+table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Footer Styling */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 1.1em;
+}
+
+/* Add some engaging animations */
+@keyframes glowing {
+    0% { text-shadow: 0 0 5px #fff, 0 0 10px #1e90ff, 0 0 20px #1e90ff; }
+    50% { text-shadow: 0 0 10px #fff, 0 0 20px #1e90ff, 0 0 30px #1e90ff; }
+    100% { text-shadow: 0 0 5px #fff, 0 0 10px #1e90ff, 0 0 20px #1e90ff; }
+}
+
+/* Glowing effect for the main titles */
+h1, h2 {
+    animation: glowing 1.5s infinite;
+}

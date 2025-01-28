@@ -209,7 +209,7 @@ def collect_feedback(results):
     return user_feedback
 
 # Function to calculate precision and recall
-def calculate_precision_recall(feedback, total_relevant_in_dataset=15):
+def calculate_precision_recall(feedback, total_relevant_in_dataset=20):
     precision = sum(feedback) / len(feedback)  # Relevant results / Total retrieved
     recall = sum(feedback) / total_relevant_in_dataset  # Relevant results / Total relevant in dataset
     return precision, recall
